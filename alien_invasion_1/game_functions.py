@@ -95,14 +95,16 @@ def ship_hit(ai_settings, stats, screen, ship, aliens, bullets):
         stats.ships_left -= 1
     else:
         stats.game_active = False    
-        # Usunięcie zawartosci list aliens i bullets.
-        aliens.empty()
-        bullets.empty()
-        # Utworzenie nowej floty i wysrodkowanie statku.
-        create_fleet(ai_settings, screen, ship, aliens)
-        ship.center_ship()
-        # Pauza.
-        sleep(0.5)
+    # Usunięcie zawartosci list aliens i bullets.
+    aliens.empty()
+    bullets.empty()
+    
+    # Utworzenie nowej floty i wysrodkowanie statku.
+    create_fleet(ai_settings, screen, ship, aliens)
+    ship.center_ship()
+    
+    # Pauza.
+    sleep(0.5)
 
     
 def check_aliens_bottom(ai_settings, stats, screen, ship, aliens, bullets):

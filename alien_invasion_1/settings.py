@@ -23,4 +23,4 @@
         self.alien_speed_factor = 1
         self.fleet_drop_speed = 20
         self.fleet_direction = 1  # wartosc fleet_direction wynosząca 1 oznacza
-        # prawo, natomiast - 1 oznacza lewo
+                                    # prawo, natomiast - 1 oznacza lewo
