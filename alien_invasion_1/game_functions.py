@@ -1,9 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Wed Oct 18 23:36:49 2017
-
-@author: Ja
-"""
 import sys
 from time import sleep
 
@@ -144,8 +138,7 @@ def change_fleet_direction(ai_settings, aliens):
     
 def ship_hit(ai_settings, stats, screen, ship, aliens, bullets):
     '''Reakcja na uedrzenie obcego w statek.'''
-    if stats.ships_left > 0:
-        
+    if stats.ships_left > 0:    
         # Zmniejszenie wartosci przechowywanej w ships_left.
         stats.ships_left -= 1
         # Usunięcie zawartosci list aliens i bullets.
@@ -154,7 +147,6 @@ def ship_hit(ai_settings, stats, screen, ship, aliens, bullets):
         # Utworzenie nowej floty i wysrodkowanie statku.
         create_fleet(ai_settings, screen, ship, aliens)
         ship.center_ship()
-    
         # Pauza.
         sleep(0.5)
     else:
@@ -167,6 +159,7 @@ def check_aliens_bottom(ai_settings, stats, screen, ship, aliens, bullets):
         if alien.rect.bottom >= screen_rect.bottom:
             # Tak samo jak w przypadku zderzenia statku z obcym.
             ship_hit(ai_settings, stats, screen, ship, aliens, bullets)
+            break
 
 def update_aliens(ai_settings, stats, screen, ship, aliens, bullets):
     '''Sprawdzenie, czy flota znajduje się przy krawędzi ekranu, a następnie

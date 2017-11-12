@@ -8,22 +8,25 @@ Created on Sun Aug  6 18:47:29 2017
 import random
 import time
 
-def displayIntro():
+
+def display_intro():
     print('You are in a land full of dragons. In front of you,')
     print('you see two caves. In one cave, the dragon is friendly')
     print('and will share his treasure with you. The other dragon')
     print('is greedy and hungry, and will eat you on sight.')
     print()
-    
-def chooseCave():
+
+
+def choose_cave():
     cave = ''
     while cave != '1' and cave != '2':
         print('Which cave will you go into? (1 or 2)')
         cave = input()
-    
+
     return cave
 
-def checkCave(chosenCave):
+
+def check_cave(chosen_cave):
     print('You approach the cave...')
     time.sleep(2)
     print('It is dark and spooky...')
@@ -31,28 +34,23 @@ def checkCave(chosenCave):
     print('A large dragon jumps out in front of you! He opens his jaws and...')
     print()
     time.sleep(2)
-    
-    friendlyCave = random.randint(1, 2)
-    
-    if chosenCave == str(friendlyCave):
+
+    friendly_cave = random.randint(1, 2)
+
+    if chosen_cave == str(friendly_cave):
         print('Gives you his treasure!')
     else:
         print('Gobbles you down in one bite!')
-        
-playAgain = 'yes'
-while playAgain == 'yes' or playAgain == 'y':
 
-    displayIntro()
 
-    caveNumber = chooseCave()
-    
-    checkCave(caveNumber)
-    
+play_again = 'yes'
+while play_again == 'yes' or play_again == 'y':
+
+    display_intro()
+
+    cave_number = choose_cave()
+
+    check_cave(cave_number)
+
     print('Do you want to play again? (yes or no)')
-    playAgain = input()
-    
-        
-        
-        
-        
-    
+    play_again = input()
