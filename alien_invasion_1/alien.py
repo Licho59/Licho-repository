@@ -1,11 +1,4 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Thu Oct 19 22:08:52 2017
-
-@author: Ja
-"""
-
-import pygame
+﻿import pygame
 from pygame.sprite import Sprite
 
 class Alien(Sprite):
@@ -27,11 +20,7 @@ class Alien(Sprite):
         
         # Przechowywanie dokładnego położenia obcego.
         self.x = float(self.rect.x)
-        
-    def blitme(self):
-        '''Wyswietlenie obcego w jego aktualnym położeniu.'''
-        self.screen.blit(self.image, self.rect)
-        
+               
     def check_edges(self):
         '''Zwraca wartosć True, jesli obcy znajduje się przy krawędzi ekranu'''
         screen_rect = self.screen.get_rect()
@@ -45,6 +34,10 @@ class Alien(Sprite):
         self.x += (self.ai_settings.alien_speed_factor *
                            self.ai_settings.fleet_direction)
         self.rect.x = self.x
+
+    def blitme(self):
+        '''Wyswietlenie obcego w jego aktualnym położeniu.'''
+        self.screen.blit(self.image, self.rect)
         
 
     

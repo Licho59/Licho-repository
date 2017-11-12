@@ -1,11 +1,4 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Thu Oct 19 17:16:04 2017
-
-@author: Ja
-"""
-
-import pygame
+﻿import pygame
 from pygame.sprite import Sprite
 
 class Bullet(Sprite):
