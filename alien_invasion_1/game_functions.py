@@ -24,7 +24,7 @@ def check_keyup_events(event, ship):
     elif event.key == pygame.K_LEFT:
         ship.moving_left = False
 
-def check_events(ai_settings, screen, stats, play_button, ship, bullets):
+def check_events(ai_settings, screen, ship, bullets):
     '''Reakcja na zdarzenia generowane przez klawiaturę i mysz.'''
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
