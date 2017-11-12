@@ -66,7 +66,7 @@ def update_bullets(ai_settings, screen, ship, aliens, bullets):
             bullets.remove(bullet)
     check_bullet_alien_collisions(ai_settings, screen, ship, aliens, bullets)
             
-def check_bullet_collisions(ai_settings, screen, ship, aliens, bullets):
+def check_bullet_alien_collisions(ai_settings, screen, ship, aliens, bullets):
     '''Reakcja na kolizję między pociskiem a obcym.'''
     # Usunięcie wszystkich pociskow i obcych, między ktorymi doszło do kolizji.
     collisions = pygame.sprite.groupcollide(bullets, aliens, True, True)
