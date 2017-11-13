@@ -35,7 +35,7 @@ def run_game():
     # Rozpoczęcie pętli głównej gry.
     while True:
         # Odswieżenie ekranu w trakcie każdej pętli.
-        gf.check_events(ai_settings, screen, stats, play_button, ship, bullets)
+        gf.check_events(ai_settings, screen, stats, play_button, ship, aliens, bullets)
         
         if stats.game_active:
             ship.update()

@@ -9,7 +9,7 @@ class Ship():
         self.ai_settings = ai_settings
 
         # Wczytanie obrazu statku kosmicznego i pobranie jego prostokąta.
-        self.image = pygame.image.load('images/ship.bmp')
+        self.image = pygame.image.load('D:\\programowanie\\licho_repo\\alien_invasion_1\\images\\ship.bmp')
         self.rect = self.image.get_rect()
         self.screen_rect = screen.get_rect()
 

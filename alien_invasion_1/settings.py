@@ -21,6 +21,6 @@
 
         # Ustawienia dotyczące obcego
         self.alien_speed_factor = 1
-        self.fleet_drop_speed = 15
+        self.fleet_drop_speed = 12
         self.fleet_direction = 1  # wartosc fleet_direction wynosząca 1 oznacza
                                     # prawo, natomiast - 1 oznacza lewo

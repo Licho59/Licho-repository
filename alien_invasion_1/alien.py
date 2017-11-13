@@ -12,7 +12,7 @@ class Alien(Sprite):
         self.ai_settings = ai_settings
 
         # Wczytanie obcego i zdefiniowanie jego atrybutu rect.
-        self.image = pygame.image.load('images/alien.bmp')
+        self.image = pygame.image.load('D:\programowanie\licho_repo\\alien_invasion_1\images/alien.bmp')
         self.rect = self.image.get_rect()
 
         # Umieszczenie nowego obcego w pobliżu lewego górnego rogu ekranu.
