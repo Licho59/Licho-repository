@@ -5,8 +5,10 @@ import pygame
 from bullet import Bullet
 from alien import Alien
 
-def check_keydown_events(event, ai_settings, screen, ship, bullets):
+def check_keydown_events(event, ai_settings, screen, stats, ship, aliens, bullets):
     '''Reakcja na nacisnięcie klawisza.'''
+    if event.key == pygame.K_g:
+        start_game(ai_settings, screen, stats, ship, aliens, bullets)
     if event.key == pygame.K_RIGHT:
         ship.moving_right = True
     elif event.key == pygame.K_LEFT:
@@ -31,7 +33,7 @@ def check_events(ai_settings, screen, stats, play_button, ship, aliens, bullets)
             pygame.quit()
             sys.exit()
         elif event.type == pygame.KEYDOWN:
-            check_keydown_events(event, ai_settings, screen, ship, bullets)
+            check_keydown_events(event, ai_settings, screen, stats, ship, aliens, bullets)
         elif event.type == pygame.KEYUP:
             check_keyup_events(event, ship)
         elif event.type == pygame.MOUSEBUTTONDOWN:
@@ -44,15 +46,18 @@ def check_play_button(ai_settings, screen, stats, play_button, ship, aliens, bul
     if button_clicked and not stats.game_active:
         # Ukrycie kursora myszy.
         pygame.mouse.set_visible(False)
-        # Wyzerowanie danych statystycznych gry.
-        stats.reset_stats()
-        stats.game_active = True
-        # Usunięcie zawartosści list aliens i bullets.
-        aliens.empty()
-        bullets.empty()
-        # Utworzenie nowej floty i wyśrodowanie statku.
-        create_fleet(ai_settings, screen, ship, aliens)
-        ship.center_ship()
+        start_game(ai_settings, screen, stats, ship, aliens, bullets)
+        
+def start_game(ai_settings, screen, stats, ship, aliens, bullets):
+# Wyzerowanie danych statystycznych gry.
+    stats.reset_stats()
+    stats.game_active = True
+    # Usunięcie zawartosści list aliens i bullets.
+    aliens.empty()
+    bullets.empty()
+    # Utworzenie nowej floty i wyśrodowanie statku.
+    create_fleet(ai_settings, screen, ship, aliens)
+    ship.center_ship()
 
 def fire_bullet(ai_settings, screen, ship, bullets):
     '''Wystrzelenie pocisku, jeżeli nie przekroczono ustalonego limitu.'''
