@@ -4,8 +4,8 @@
     def __init__(self):
         '''Inicjalizacja danych statystycznych gry.'''
         # Ustawienia ekranu.
-        self.screen_width = 700
-        self.screen_height = 500
+        self.screen_width = 780
+        self.screen_height = 570
         self.bg_color = (230, 230, 230)
         # Ustawienia dotyczące statku.
         self.ship_limit = 3
@@ -27,6 +27,8 @@
         self.alien_speed_factor = 1
         # Wartość fleet_direction wynosząca 1 oznacza prawo, natomiast -1 oznacza lewo.      
         self.fleet_direction = 1
+        # Punktacja.
+        self.alien_points = 50
 
     def increase_speed(self):
         '''Zmiana ustawien dotyczących szybkości.'''
