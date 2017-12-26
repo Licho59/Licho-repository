@@ -5,8 +5,8 @@ from pygame.locals import *
 pygame.init()
 
 # set up the window
-WINDOWWIDTH = 700
-WINDOWHEIGHT = 550
+WINDOWWIDTH = 400
+WINDOWHEIGHT = 400
 windowSurface = pygame.display.set_mode((WINDOWWIDTH, WINDOWHEIGHT), 0, 32)
 pygame.display.set_caption('Animation')
 
@@ -26,7 +26,7 @@ BLUE = (0, 0, 255)
 
 # set up the block data structure
 b1 = {'rect':pygame.Rect(300, 80, 50, 100), 'color':RED, 'dir':UPRIGHT}
-b2 = {'rect':pygame.Rect(200, 200, 80, 80), 'color':GREEN, 'dir':UPLEFT}
+b2 = {'rect':pygame.Rect(200, 200, 20, 20), 'color':GREEN, 'dir':UPLEFT}
 b3 = {'rect':pygame.Rect(100, 150, 60, 60), 'color':BLUE, 'dir':DOWNLEFT}
 blocks = [b1, b2, b3]
 
@@ -44,19 +44,19 @@ while True:
     for b in blocks:
         # move the block data structure
         if b['dir'] == DOWNLEFT:
-            b['rect'].left -= MOVESPEED +2
+            b['rect'].left -= MOVESPEED
             b['rect'].top += MOVESPEED
         if b['dir'] == DOWNRIGHT:
-            b['rect'].left += MOVESPEED +6
-            b['rect'].top +=MOVESPEED
+            b['rect'].left += MOVESPEED
+            b['rect'].top += MOVESPEED
         if b['dir'] == UPLEFT:
-            b['rect'].left -= MOVESPEED +6
+            b['rect'].left -= MOVESPEED
             b['rect'].top -= MOVESPEED
         if b['dir'] == UPRIGHT:
             b['rect'].left += MOVESPEED
             b['rect'].top -= MOVESPEED
 
-        # check if the block has move out of the window
+        # check if the block has moved out of the window
         if b['rect'].top < 0:
             # block has moved past the top
             if b['dir'] == UPLEFT:
@@ -76,6 +76,7 @@ while True:
             if b['dir'] == UPLEFT:
                 b['dir'] = UPRIGHT
         if b['rect'].right > WINDOWWIDTH:
+            # block has moved past the right side
             if b['dir'] == DOWNRIGHT:
                 b['dir'] = DOWNLEFT
             if b['dir'] == UPRIGHT:
@@ -83,8 +84,7 @@ while True:
 
         # draw the block onto the surface
         pygame.draw.rect(windowSurface, b['color'], b['rect'])
-        
+
     # draw the window onto the screen
     pygame.display.update()
     time.sleep(0.02)
-        

@@ -23,7 +23,7 @@ def waitForPlayerToPressKey():
             if event.type == QUIT:
                 terminate()
             if event.type == KEYDOWN:
-                if event.key == K_ESCAPE: # pressing escape quits game
+                if event.key == K_ESCAPE: # pressing escape quits
                     terminate()
                 return
 
@@ -39,7 +39,7 @@ def drawText(text, font, surface, x, y):
     textrect.topleft = (x, y)
     surface.blit(textobj, textrect)
 
-# set up pygame, the window and the mouse cursor
+# set up pygame, the window, and the mouse cursor
 pygame.init()
 mainClock = pygame.time.Clock()
 windowSurface = pygame.display.set_mode((WINDOWWIDTH, WINDOWHEIGHT))
@@ -60,8 +60,7 @@ baddieImage = pygame.image.load('baddie.png')
 
 # show the "Start" screen
 drawText('Dodger', font, windowSurface, (WINDOWWIDTH / 3), (WINDOWHEIGHT / 3))
-drawText('Press a key to start.', font, windowSurface, (WINDOWWIDTH / 3) -
-30, (WINDOWHEIGHT / 3) + 50)
+drawText('Press a key to start.', font, windowSurface, (WINDOWWIDTH / 3) - 30, (WINDOWHEIGHT / 3) + 50)
 pygame.display.update()
 waitForPlayerToPressKey()
 
@@ -95,22 +94,22 @@ while True:
                 if event.key == K_RIGHT or event.key == ord('d'):
                     moveLeft = False
                     moveRight = True
-                if event.key == K_UP or event.key == ('w'):
+                if event.key == K_UP or event.key == ord('w'):
                     moveDown = False
                     moveUp = True
-                if event.key == K_DOWN or event.key == ('s'):
+                if event.key == K_DOWN or event.key == ord('s'):
                     moveUp = False
                     moveDown = True
 
             if event.type == KEYUP:
                 if event.key == ord('z'):
-                    reverseChat = False
+                    reverseCheat = False
                     score = 0
                 if event.key == ord('x'):
                     slowCheat = False
                     score = 0
                 if event.key == K_ESCAPE:
-                    terminate()
+                        terminate()
 
                 if event.key == K_LEFT or event.key == ord('a'):
                     moveLeft = False
@@ -123,8 +122,7 @@ while True:
 
             if event.type == MOUSEMOTION:
                 # If the mouse moves, move the player where the cursor is.
-                playerRect.move_ip(event.pos[0] - playerRect.centerx, 
-event.pos[1] - playerRect.centery)
+                playerRect.move_ip(event.pos[0] - playerRect.centerx, event.pos[1] - playerRect.centery)
 
         # Add new baddies at the top of the screen, if needed.
         if not reverseCheat and not slowCheat:
@@ -132,11 +130,11 @@ event.pos[1] - playerRect.centery)
         if baddieAddCounter == ADDNEWBADDIERATE:
             baddieAddCounter = 0
             baddieSize = random.randint(BADDIEMINSIZE, BADDIEMAXSIZE)
-            newBaddie = {'rect': pygame.Rect(random.randint(0, WINDOWWIDTH -
-baddieSize), 0 - baddieSize, baddieSize, baddieSize),
-'speed': random.randint(BADDIEMINSPEED,BADDIEMAXSPEED),
-'surface': pygame.transform.scale(baddieImage,(baddieSize, baddieSize)),
-                                 }
+            newBaddie = {'rect': pygame.Rect(random.randint(0, WINDOWWIDTH-baddieSize), 0 - baddieSize, baddieSize, baddieSize),
+                        'speed': random.randint(BADDIEMINSPEED, BADDIEMAXSPEED),
+                        'surface':pygame.transform.scale(baddieImage, (baddieSize, baddieSize)),
+                        }
+
             baddies.append(newBaddie)
 
         # Move the player around.
@@ -161,10 +159,10 @@ baddieSize), 0 - baddieSize, baddieSize, baddieSize),
             elif slowCheat:
                 b['rect'].move_ip(0, 1)
 
-        # Delete baddies that have fallen past the bottom.
-            for b in baddies[:]:
-                if b['rect'].top > WINDOWHEIGHT:
-                    baddies.remove(b)
+         # Delete baddies that have fallen past the bottom.
+        for b in baddies[:]:
+            if b['rect'].top > WINDOWHEIGHT:
+                baddies.remove(b)
 
         # Draw the game world on the window.
         windowSurface.fill(BACKGROUNDCOLOR)
@@ -194,12 +192,9 @@ baddieSize), 0 - baddieSize, baddieSize, baddieSize),
     pygame.mixer.music.stop()
     gameOverSound.play()
 
-    drawText('GAME OVER', font, windowSurface, (WINDOWWIDTH / 3),
-(WINDOWHEIGHT / 3))
-    drawText('Press a key to play again.', font, windowSurface,
-(WINDOWWIDTH / 3) - 80, (WINDOWHEIGHT / 3) + 50)
+    drawText('GAME OVER', font, windowSurface, (WINDOWWIDTH / 3), (WINDOWHEIGHT / 3))
+    drawText('Press a key to play again.', font, windowSurface, (WINDOWWIDTH / 3) - 80, (WINDOWHEIGHT / 3) + 50)
     pygame.display.update()
     waitForPlayerToPressKey()
 
     gameOverSound.stop()
-            
