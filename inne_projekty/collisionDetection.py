@@ -17,8 +17,7 @@ def doRectsOverlap(rect1, rect2):
 
 
 def isPointInsideRect(x, y, rect):
-    if (x > rect.left) and (x < rect.right) and (y > rect.top) and (y <
-                                                                    rect.bottom):
+    if (x > rect.left) and (x < rect.right) and (y > rect.top) and (y<rect.bottom):
         return True
     else:
         return False
@@ -29,8 +28,8 @@ pygame.init()
 mainClock = pygame.time.Clock()
 
 # set up the window
-WINDOWWIDTH = 400
-WINDOWHEIGHT = 400
+WINDOWWIDTH = 640
+WINDOWHEIGHT = 480
 windowSurface = pygame.display.set_mode((WINDOWWIDTH, WINDOWHEIGHT), 0, 32)
 pygame.display.set_caption('Collision Detection')
 
