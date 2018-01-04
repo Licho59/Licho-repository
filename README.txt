@@ -1,1 +1,1 @@
-abrakadabra
+This repository is under a constant learning process of python, git and other interesting things.
