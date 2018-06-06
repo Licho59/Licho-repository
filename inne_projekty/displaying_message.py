@@ -4,7 +4,7 @@ Created on Thu Aug  3 19:43:39 2017
 
 @author: Leszek
 """
-# pygame - kod wyswietlający kolejkę wiadomosci
+# pygame - kod wyswietlajÄ…cy kolejkÄ™ wiadomosci
 import pygame
 from pygame.locals import *
 from sys import exit
