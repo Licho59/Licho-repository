@@ -8,6 +8,7 @@ Created on Sun Sep 17 10:58:00 2017
 def fib(n):
     '''Uses recursive method.'''
     global numFibCalls
+    numFibCalls = 0
     numFibCalls += 1  
     if n == 1:
         return 1
