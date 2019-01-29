@@ -29,7 +29,7 @@ def main():
     coinsUsed = [0] * (amnt + 1)
     coinCount = [0] * (amnt + 1)
 
-    print("Making change for", amnt, "requires")
+    print("Making change for", amnt, "requires:", end='')
     print(dpMakeChange(clist, amnt, coinCount, coinsUsed), "coins")
     print("They are:")
     printCoins(coinsUsed, amnt)

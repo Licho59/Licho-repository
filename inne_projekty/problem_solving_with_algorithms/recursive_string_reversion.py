@@ -17,11 +17,21 @@ def reversedString(expression):
         return str(temp)
     else:
         return reversedString(temp[1:]) + str(temp[0])
+        
+def reversedList(expression):
+    temp = expression
+    if temp == []:
+        return None
+    if len(temp) == 1:
+        return temp
+    else:
+        return reversedList(temp[1:]) + list(temp[0])
 
 
-print(reversedString('abcd'))
+print(reversedList(['a', 'b', 'c', 'd']))
+'''print(reversedString('abcd'))
 
 testEqual(reversedString("hello"), "olleh")
 testEqual(reversedString("l"), "l")
 testEqual(reversedString("follow"), "wollof")
-testEqual(reversedString(""), "")
+testEqual(reversedString(""), "")'''

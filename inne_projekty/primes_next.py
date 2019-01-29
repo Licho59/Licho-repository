@@ -10,7 +10,7 @@ start = time()
 def primesFn():
     lista = []
     prim = 1
-    while len(lista) < 1000:
+    while len(lista) < 10000:
         prim += 1
         for p in lista:
             if prim % p == 0:

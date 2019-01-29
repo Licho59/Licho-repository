@@ -1,0 +1,54 @@
+body 
+{
+font-size: 14px;
+font-style: normal;
+color: navy;
+background-color: lightgray;
+font-family: arial, helvetica, serif;
+}
+
+h1
+{
+color: #ff8;
+background-color: #05e;
+font-style: italic;
+font-size: 2.5em;
+}
+
+h2
+{
+font-size: 1.5em;
+background-color: #ccc;
+margin: 20px;
+padding: 30px;
+padding-left: 80px;
+border-style: double;
+border-bottom-style: dashed;
+border-width: 3px;
+border-left-width: 10px;
+border-color: red;
+}
+
+img
+{padding-left: 50px;}
+
+table
+{font-weight: bold;}
+
+ol
+{text-decoration: underline;}
+
+p
+{
+font-size: 18px;
+letter-spacing: 1.1em;
+word-spacing: 1.1em;
+line-height: 1.5;
+text-align: left;
+}
+
+a
+{text-decoration: none;}
+
+strong
+{text-transform: uppercase;}

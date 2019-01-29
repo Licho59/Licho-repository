@@ -22,7 +22,7 @@ def genPrimesFn():
       return primes
  
  
- def genPrimesFn():
+def genPrimesFn():
       '''Function to print every 10th prime number, until you've printed 20
       of them.'''
       primes = []   # primes generated so far
