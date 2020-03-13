@@ -2,7 +2,7 @@ import time
 from random import randrange
 
 
-def minList_1(L):
+def testminList_1(L): # function name changed deliberately to check py.test command
     minimum = L[0]
     for i in range(len(L)):
         if L[i] < minimum:

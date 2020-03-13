@@ -46,7 +46,7 @@ def hanoi(ndisks, startPeg=0, endPeg=2):
 #   Set up initial tower of disks
 for disk in range(ndisks):
     r = radius*(disk+1)
-    rect[disk]=pygame.Rect(dx-r/2,dh*disk,r,dh) # save disk coords, size
+    rect[disk]=pygame.Rect(wx-r/2,dh*disk,r,dh) # save disk coords, size
     pygame.draw.rect(d, pygame.Color(cols[disk]), rect[disk])
 
 pygame.display.flip()

@@ -1,4 +1,5 @@
 {
     "editor.wordWrap": "wordWrapColumn",
-    "python.pythonPath": "C:\\Users\\14000322\\AppData\\Local\\Programs\\Python\\Python36-32\\python.exe"
+    "python.pythonPath": "C:\\Users\\14000322\\AppData\\Local\\Programs\\Python\\Python36-32\\python.exe",
+    "python.terminal.executeInFileDir": true
 }
