@@ -1,5 +1,5 @@
 
-Django==1.11.7
+Django==1.11.28
 numpy==1.18.1
 pandas==1.0.1
 requests==2.22.0
