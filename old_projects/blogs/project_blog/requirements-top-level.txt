@@ -1,0 +1,7 @@
+
+Django
+numpy==1.18.1
+pandas==1.0.1
+requests==2.22.0
+
+# to make requirements.txt listed with top level dependencies separately first make pip install -r requirements-top-level.txt --upgrade and after that use: pip install -r requirements-top-level.txt > requirements.txt or immediately: pip freeze > requirements.txt

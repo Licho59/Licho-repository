@@ -1,0 +1,1 @@
+The project of private blog starting the process of developing skills in Django.
