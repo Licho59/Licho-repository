@@ -1,4 +1,4 @@
-Django==1.11.7
+Django==1.11.28
 django-shortcuts==1.5
 django-taggit==0.17.1
 Markdown==2.6.2
