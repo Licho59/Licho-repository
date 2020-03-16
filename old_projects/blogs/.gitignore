@@ -3,8 +3,6 @@ __pycache__/
 *.py[cod]
 *$py.class
 *.pyc
-chapter_13/__pycache__/*
-
 # C extensions
 *.so
 
@@ -83,14 +81,12 @@ celerybeat-schedule
 
 # dotenv
 .env
-.myenv/
-.old_projects/blogs/learning_log/ll_env
-.old_projects/blogs/project_blog/myvenv
-.old_projects/blogs/small/myvenv
+
 # virtualenv
 .venv
 venv/
 ENV/
+ll_env/
 
 # Spyder project settings
 .spyderproject
