@@ -9,6 +9,8 @@ verify_ssl = true
 pytest = "*"
 pygame = "*"
 click = "*"
+flake8 = "*"
+black = "*"
 
 [requires]
 python_version = "3.6"
