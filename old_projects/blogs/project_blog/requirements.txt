@@ -1,6 +1,6 @@
 
 Django==1.11.28
-numpy==1.18.1
+numpy==1.22.0
 pandas==1.0.1
 requests==2.22.0
 ## The following requirements were added by pip freeze:
